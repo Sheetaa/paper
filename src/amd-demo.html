@@ -1,0 +1,40 @@
+<script type="text/javascript" src="js/jquery-1.4.2.js" id="jquery-skin-sign"></script>
+<script type="text/javascript" src="js/skin/jquery.skin.js"></script>
+<script type="text/javascript" src="tools/json/json2.js"></script>
+<script type="text/javascript" src="css/juery_ui/jquery-ui-1.8.4.custom.min.js"></script>
+<script type="text/javascript" src="js/jquery.hoverIntent.js"></script>
+<script type="text/javascript" src="js/jquery.iframe.js"></script>
+<script type="text/javascript" src="js/jquery.livequery.js"></script>
+<script type="text/javascript" src="tools/bgiframe_2.1.2/jquery.bgiframe.min.js"></script>
+<script type="text/javascript" src="tools/boxy/javascripts/jquery.boxy.js"></script>
+<script type="text/javascript" src="tools/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="tools/pushlet/ajax-pushlet-client_modify.js"></script>
+<script type="text/javascript" src="tools/pushlet/kefuContact.js"></script>
+<script type="text/javascript" src="tools/user-online/new-msg-remind.js"></script>
+<script type="text/javascript" src="tools/user-online/user-online.js"></script>
+<script type="text/javascript" src="tools/superfish-1.4.8/js/superfish.js"></script>
+<script type="text/javascript" src="js/login/encode.js"></script>
+<script type="text/javascript" src="pages/index/js/index.js"></script>
+<script type="text/javascript" src="pages/index/js/showTime.js"></script>
+
+<script type="text/javascript" src="js/require.js"></script>
+<script type="text/javascript">
+    require.config({
+        baseUrl: 'feRoot',
+        paths: {
+            'jQuery': 'feRoot/dep/jquery/1.4.2/jQuery',
+            'jQuery-ui': 'feRoot/dep/jquery-ui/1.8.4/jquery-ui.min',
+            'index': 'feRoot/src/current/js/index'
+        }
+    });
+    require(['index'], function (index) {
+        var $ = require('jQuery');
+        var jQueryUI = require('jQuery-ui');
+        var datePicker = require('WdataPicker');
+        var hoverIntent = require('hoverIntent');
+        var livequery = require('livequery');
+        var showTime = require('showTime');
+        var superfish = require('superfish');
+        var newMesRemind = require('new-msg-remind');
+    });
+</script>
