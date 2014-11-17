@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Preload-test</title>
+    <link rel="prefetch" href="img/preload-prediction-model.png">
+    <link rel="prefetch" href="next-page.html">
+</head>
+<body>
+测试 prefetch 标签
+<a href="next-page.html">下一页</a>
+<hr>
+<ul>
+    <li>Chrome: 会预加载图片和网页，但是点击下一页以后还是要重新请求 HTML 和图片资源，而不是直接从缓存中读取。</li>
+    <li>Firefox: 支持的很好，会预加载图片和网页，而且在下一页会直接从缓存中读取，receiving 0ms</li>
+</ul>
+<table>
+    <thead><th></th><th>开 prefetch</th><th> 不用 prefetch</th></thead>
+    <tbody>
+        <tr>
+            <th>next-page.html</th>
+            <td>2.207ms</td>
+            <td>2.766ms</td>
+        </tr>
+        <tr>
+            <th>preload-prediction-model</th>
+            <td>12.231ms</td>
+            <td>13.283ms</td>
+        </tr>
+    </tbody>
+</table>
+<table>
+    <thead><th></th><th>开 prefetch</th><th> 不用 prefetch</th></thead>
+    <tbody>
+        <tr>
+            <th>next-page.html</th>
+            <td>0ms</td>
+            <td>2.766ms</td>
+        </tr>
+        <tr>
+            <th>preload-prediction-model</th>
+            <td>0ms</td>
+            <td>13.283ms</td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
