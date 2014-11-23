@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Preload-test</title>
-    <link rel="prefetch" href="img/preload-prediction-model.png">
-    <link rel="prefetch" href="next-page.html">
+    <!-- <link rel="prefetch" href="http://localhost:8848/src/preload/img/preload-prediction-model.png"> -->
+    <!-- <link rel="prefetch" href="cookie.js"> -->
+    <!-- <link rel="prefetch" href="md5.js"> -->
+    <!-- <link rel="prerender" href="next-page.html"> -->
 </head>
 <body>
 测试 prefetch 标签
@@ -44,5 +46,37 @@
         </tr>
     </tbody>
 </table>
+<table>
+    <thead><th></th><th>开 prefetch</th><th> 不用 prefetch</th></thead>
+    <tbody>
+        <tr>
+            <th>next-page.html</th>
+            <td>&lt;1ms</td>
+            <td>&lt;1ms</td>
+        </tr>
+        <tr>
+            <th>preload-prediction-model</th>
+            <td>15ms</td>
+            <td>203ms</td>
+        </tr>
+    </tbody>
+</table>
+<script src="../../dep/require.js"></script>
+<script>
+    require.config({
+        baseUrl: '/src/preload',
+        paths: {
+            'bower': '../../bower_components'
+        }
+    });
+    require(['preload'], function (preload) {
+        preload.init([
+            'normalize.css',
+            'cookie.js',
+            'md5.js',
+            'img/preload-prediction-model.png'
+        ]);
+    });
+</script>
 </body>
 </html>
