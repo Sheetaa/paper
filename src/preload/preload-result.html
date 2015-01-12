@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Preload Result</title>
+</head>
+<body>
+    <div id="main" style="height:400px; width: 800px;"></div>
+    <!-- ECharts单文件引入 -->
+    <script src="http://echarts.baidu.com/build/dist/echarts-all.js"></script>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts图表
+        var myChart = echarts.init(document.getElementById('main'));
+
+        var option = {
+            tooltip: {
+                show: true
+            },
+            color: ['#000', '#3E98C5'],
+            legend: {
+                show: true,
+                y: 'bottom',
+                data:['平均响应时间', '平均命中率']
+            },
+            xAxis : [
+                {
+                    type: 'category',
+                    data: ['1', '5', '10', '15', '20',
+                            '25', '30', '35', '40', '45',
+                            '50', '55', '60', '65', '70', '75'],
+                    axisLabel: {
+                        formatter: function (value) {
+                            return value + '天'
+                        }
+                    }
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value',
+                    name: '平均命中率',
+                    axisLabel: {
+                        formatter: function (value) {
+                            return value + '%';
+                        }
+                    },
+                    position: 'left',
+                    axisTick: {
+                        show: true
+                    },
+                },
+                {
+                    type: 'value',
+                    name: '平均响应时间',
+                    axisLabel: {
+                        formatter: function (value) {
+                            return value + 's';
+                        }
+                    },
+                    position: 'right',
+                    axisTick: {
+                        show: true
+                    },
+                    min: 3,
+                    max: 8
+                }
+            ],
+            series : [
+                {
+                    name: "平均命中率",
+                    type: "bar",
+                    data: [0, 8, 13, 27, 35.32, 40.97, 50.43, 45.78, 46.84,
+                            57.59, 45.03, 54.12, 48.43, 58.73, 46.97, 51.72]
+                },
+                {
+                    name: '平均响应时间',
+                    type: 'line',
+                    yAxisIndex: 1,
+                    data: [6.73, 6.26, 5.81, 5.34, 5.16, 4.98, 4.74, 4.58,
+                            4.52, 4.46, 4.40, 4.39, 4.45, 4.51, 4.43, 4.41]
+                }
+            ]
+        };
+
+        // 为echarts对象加载数据
+        myChart.setOption(option);
+    </script>
+</body>
+</html>

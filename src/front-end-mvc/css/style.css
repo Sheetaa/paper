@@ -1,0 +1,263 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0; padding:0;}
+.main{
+	  margin:0 auto;
+	  position:absolute;
+	  overflow: hidden;
+	  }
+/*head=======================================================*/
+.head{ 
+	  margin:20px auto 0 auto;
+	  width: 80%;
+	  height:35px;
+	   }
+.head div{
+	  background: url(../../img/login/headpic1.jpg);
+}
+.head a{
+		margin-left:25%;
+		margin-top: 3px;
+		font-size:14px; 
+        font-family: Microsoft Yahei, "宋体" ;
+	    text-decoration:none;  
+        color:#FFFFFF
+		}
+.head .head-1{
+	   height:25px;
+	   float:left;
+	   }
+.head .head-1:hover{
+       background: url(../../img/login/headpic.jpg);
+	          }	
+.head .head-2{
+	   height:25px;
+	   float:left;
+	   }
+.head .head-2:hover{
+       background: url(../../img/login/headpic.jpg);
+	          }	
+.head .head-3{
+	   height:25px;
+	   float:left;
+	   }
+.head .head-3:hover{
+       background: url(../../img/login/headpic.jpg);
+	          }	
+.head .head-4{
+	   height:25px;
+	   float:left;
+	   }
+.head .head-4:hover{
+       background: url(../../img/login/headpic.jpg);
+	          }	
+.head .head-5{
+	   height:25px;
+	   float:left;
+	   }
+.head .head-5:hover{
+       background: url(../../img/login/headpic.jpg);
+
+	          }	
+.head .head-6{
+	   height:25px;
+	   float:left;
+	   }
+.head .head-6:hover{
+       background: url(../../img/login/headpic.jpg);
+
+	          }	
+/*yuncai=======================================================*/ 
+.yuncai1{
+         width:135px;
+         height:73px;
+		 position: absolute;
+		 top:16%;
+		 left:4%;
+		 display:none;
+		 background: url(../../img/login/yuncai1.png)
+		 
+		 }	
+.yuncai1 a{
+         position:absolute; 
+         top:30px;
+         left:35px;
+         font-family: Microsoft Yahei, "宋体";
+		 font-size:12px;
+		 text-decoration:none;
+		 color:#000
+         }
+.yuncai2{
+		 display:none;
+		 background: url(../../img/login/yuncai1.png);
+         width:135px;
+         height:73px;
+		 position:absolute; 
+		 top:19%;
+		 left:10%;
+		 }
+.yuncai2 a{
+         position:absolute; top:30px;left:45px;
+         font-family: Microsoft Yahei, "宋体";
+		 font-size:12px;
+		 text-decoration:none;
+		 color:#000
+          }		   
+.yuncai3{
+		 background: url(../../img/login/yuncai1.png);
+		 display:none;
+         width:135px;
+         height:73px;
+		 position:absolute;
+		 top:16%;
+		 left:17%;
+		 }
+.yuncai3 a{
+         position:absolute; top:30px;left:35px;
+         font-family: Microsoft Yahei, "宋体";
+		 font-size:12px;
+		 text-decoration:none;
+		 color:#000
+          }		   		 
+.yuncai4{
+		 display:none;
+		 background: url(../../img/login/yuncai1.png);
+         width:135px;
+         height:73px;
+		 position:absolute;
+		 top:19%;
+		 left:23%;
+		 }
+.yuncai4 a{
+         position:absolute; top:30px;left:35px;
+         font-family: Microsoft Yahei, "宋体";
+		 font-size:12px;
+		 text-decoration:none;
+		 color:#000
+          }	
+          
+.yuncai5{
+		 display:none;
+		width:135px;
+        height:73px;
+		position:absolute;
+		top:17%;
+		left:30%;
+		background: url(../../img/login/yuncai1.png)          
+	}
+.yuncai5 a{
+		position:absolute; top:30px;left:55px;
+        font-family: Microsoft Yahei, "宋体";
+		font-size:12px;
+		text-decoration:none;
+		color:#000
+	}	
+/*login=======================================================*/  
+.login{
+       width:352px;
+	   height:250px;
+	   background: url(../../img/login/bg-yunzhiduan.jpg) no-repeat;
+	   position:absolute;
+	   left:40%;
+	   top:40%;
+	  }	
+.login table tr{
+	height: 32px;
+}
+.casuallogin{
+       width:430px;
+	   height:230px;
+	   position:absolute;
+	   left: 5%;
+	   top: -12%;
+	  }
+.login1{
+		width:352px;
+        height:250px;
+        color:#0066FF;
+        padding-left:50px;
+        padding-top: 34px;
+       }
+.login1 .log{
+        padding:0 0 0 0px;
+		}
+.login1 .log p{ 
+        font-family: Microsoft Yahei, "宋体";
+		font-size:12px; 
+		font-weight:bold;
+		color: #000000 
+}
+.login1 .log .yanzheng{ 
+           width:40px;
+		   margin:1px;
+		   }
+.login1 .log .dia{
+           margin-top:2px;
+           width:35px;
+		   height:15px;
+		    background:/*url(../../../img/yanzheng.jpg)*/;}		  
+.login1 .log input.text-baoli {
+          width:180px;
+          }
+.login1 .log .c-name{
+            margin:1px;
+			}				   
+.login1 .log .pass{
+            margin:1px;
+			}				   
+.login1 .log .user{
+            margin:1px;
+			}				   
+		 
+.log a{ 
+       font-size:12px; 
+       font-family: Microsoft Yahei, "宋体";
+	   color:#000000; 
+	   text-decoration:none;
+	     
+	   }
+.logg{width:200px;height:20px;margin-top:-8px}
+
+.login2{
+       margin:-1px 0 0px 15px;
+       width:100%; 
+	   }
+.login2 .sign{margin-right:0px;}
+
+.login3 input{
+        width:89px; 
+        height:36px;
+        color:#0046FF;
+	    float:left; 
+		background:url(../../img/login/shiyong.jpg) no-repeat ;
+		position:relative; left:65px;top:200px;
+       }
+.login3 a{
+       position:relative; left:-10px;top:208px;
+	   font-size:16px; 
+	   font-family: Microsoft Yahei, "宋体";
+	   color:#FFFFFF;
+	   z-index:1;
+	   text-decoration:none
+	    
+	   }
+	   		  	   		 		   
+/*foot=======================================================*/   
+.foot{
+	  width:100%;
+      margin:0px auto;
+	  font-size:12px;
+	  font-family: Microsoft Yahei, "宋体";
+	  bottom:5px;
+	  position: absolute;
+	  text-align: center;
+	  }
+
+#waiting{
+	display:none;
+}
+
+#tips{
+	color:	red;
+}
+

@@ -17,8 +17,8 @@ define(function (require) {
         var o = null;
         // console.log(UA);
         // alert(UA);
-        alert(UA.ie);
-        alert(navigator.appName);
+        // alert(UA.ie);
+        // alert(navigator.appName);
 
         for (var i = 0, len = params.length; i < len; i++) {
             if (UA.ie === 6 || UA.ie === 7 || UA.ie === 8) {
@@ -55,6 +55,36 @@ define(function (require) {
             document.body.appendChild(o);
         }
     }
+
+    window.onload = function() {
+        // reference to <head>
+        var head = document.getElementsByTagName('head')[0];
+
+        // a new CSS
+        var css = document.createElement('link');
+        css.type = "text/css";
+        css.rel = "stylesheet";
+        css.href = "new.css";
+
+        // a new JS
+        var js = document.createElement("script");
+        js.type = "text/javascript";
+        js.src = "new.js";
+
+        // preload JS and CSS
+        head.appendChild(css);
+        head.appendChild(js);
+    };
+
+    window.onload = function() {
+        // XHR to request a JS and a CSS
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'new.js');
+        xhr.send('');
+        xhr = new XMLHttpRequest();
+        xhr.open('GET', 'new.css');
+        xhr.send('');
+    };
 
     return {
         init: init

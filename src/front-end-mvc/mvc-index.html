@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+</body>
+</html>
+<html>
+<head>
+  <meta charset="UTF-8">
+<title>登录HiService</title>
+<link rel="shortcut icon" href="img/H.png">
+<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.8.18.custom.css">
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/style.css">
+    <style type="text/css">
+      #blue-bar {
+            height:36px;
+            width: 100%;
+            background: rgb(107, 217, 244) url(img/login/login-blueBar-baoli.jpg) repeat-x scroll;
+            position: absolute;
+            top: 37%;
+            z-index: 1000;
+        }
+        #login-logo-baoli {
+            height:130px;
+            width: 100%;
+            /*background: white url(img/login/logo-yunzhiduan.png) no-repeat scroll;*/
+            position: absolute;
+            left: 36%;
+            top: 30%;
+            z-index: 900;
+        }
+        #login-logo-title {
+            height:30px;
+            width: 100%;
+            background: white url(img/login/title-yunzhiduan.jpg) no-repeat scroll;
+            position: absolute;
+            z-index: 901;
+        }
+        #register {
+          margin-top: 25px;
+          position: relative;
+          left: -25px;
+          color: #000;
+          font-size: 12px;
+        }
+        #register span a:link {color:#595959;}
+        #register span a:visited {color:#595959;}
+      #register span a:hover {color:#595959;}
+      #register span a:active {color:#595959;}
+      #register img {vertical-align: text-bottom;}
+    </style>
+</head>
+<body onLoad="checkCookie()">
+<img id="bgImage" src="img/login/bg-baoli.jpg" style="float:left;z-index: -1000;position: absolute;"/>
+<div class="main">
+<!--login==================================================-->
+<!--<span><img src="img/login/animationProcessing.gif" style="position:relative;top:-8px;left:-7%;float:right"/></span>-->
+<div id="blue-bar"></div>
+<div id="login-logo-baoli">
+  <img src='img/login/logo-yunzhiduan.png' width=230/>
+</div>
+<div id="login-logo-title"></div>
+<div class="login">
+    <div class="login1">
+      <div class="log">
+        <!-- <P>登录  <span id="tips"></span></P> -->
+        <div class="row-fluid">
+          <%--<div class="span2">登录</div>
+          --%><div class="span9" style="text-align: center;"><span id="tips"><s:property value="#sInvalidateMsg" /></span></div>
+        </div>
+      <!--
+        <hr style="margin: 0;padding: 0;height: 0;"/>
+       -->
+
+        <form name = "loginForm" action="" method="post" >
+          <table style="width: 100%; height: 105px;">
+            <tr>
+              <td style="width: 49px">
+                <a href="#">公司名：</a>
+              </td>
+              <td>
+                <div class="controls">
+                        <div class="input-prepend">
+                          <span class="add-on"><i class="icon-home"></i></span><input class="c-name text-baoli" id="companyname" type="text" tabindex="1"/>
+                        </div>
+                      </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#">用户名：</a>
+              </td>
+              <td>
+                <div class="controls">
+                        <div class="input-prepend">
+                          <span class="add-on"><i class="icon-user"></i></span><input class="user text-baoli" id="username" maxlength="100" name="Crm_Control:loginname" type="text" tabindex="2"/>
+                        </div>
+                      </div>
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: right;">
+                <a href="#">密&nbsp;&nbsp;&nbsp;码：</a>
+              </td>
+              <td>
+                <div class="controls">
+                        <div class="input-prepend">
+                          <span class="add-on"><i class="icon-eye-close"></i></span><input class="pass text-baoli" id="password" maxlength="16" name="Crm_Control:mpassword" type="password" tabindex="3" />
+                        </div>
+                      </div>
+              </td>
+            </tr>
+            <tr id="yincang" style="display:none">
+              <td>
+                <a href="#">验证码：</a>
+              </td>
+              <td>
+                <!-- <input class="yanzheng" type="text" />&nbsp;<img src="img/login/yanzheng.jpg" /> -->
+                <input class="yanzheng" id="yanzm" maxlength="16" name="Crm_Control:mpassword" type="text" tabindex="4"/>&nbsp;
+                <img alt="code..." name="randImage" id="randImage" src="code.jsp" style="position: relative;top:0px;width: 48px;"/>&nbsp;
+                <a href="javascript:loadimage();"><font style="font-size: 13px;color:rgb(106, 106, 106);">换一张</font></a>
+              </td>
+            </tr>
+            <tr>
+              <td colspan=2>
+                <input style="margin-left:50px" type="checkbox" id="saveUsernameAndCompany"/><div style="display:inline;color:black;margin-left:10px">记住用户名</div>
+              </td>
+            </tr>
+
+          </table>
+          <table style="width: 100%;">
+            <tr>
+              <td>&nbsp;&nbsp;
+                <input id="submit" class="sign" style="height: 25px; width: 174px;margin-left:35px" type="button" value="用 户 登 录" tabindex="5"/>
+              </td>
+            </tr>
+          </table>
+        </form>
+    </div>
+    <div id="register">
+      还没有账号? 请使用以下账号注册：
+      <span id="wb_connect_btn"><a href="#" onclick="weiboLogin()"><img src="img/weibo_1616.png"/>新浪微博</a></span>
+      &nbsp;
+      <span id="qqLoginBtn"><a href="#" onclick="qqLogin()"><img src="img/qq_1616.png"/>QQ</a></span>
+    </div>
+  </div>
+</div>
+<!--foot==================================================-->
+<div class="foot">Copyright © 北京海斯维思信息科技有限公司. All Rights Reserved<br />☏℡: 010-62389375</div>
+
+</div>
+<script type="text/javascript" src="js/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/login/encode.js"></script>
+<script type="text/javascript" src="js/login/cookie.js"></script>
+<script type="text/javascript" src="js/login/login.js"></script>
+<script type="text/javascript" src="js/login/md5.js"></script>
+<script type="text/javascript" src="js/login/index.js"></script>
+<script type="text/javascript" src="js/selfFullScreenLoader.js"></script>
+<script type="text/javascript" src="js/login/loginUtil.js"></script>
+<script type="text/javascript" src="js/json2.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.4.custom.min.js"></script>
+<script type="text/javascript">
+  $(function(){
+    $(".login input").keypress(function(event) {
+      switch (event.keyCode) {
+               case 13:
+                   $("#submit").click();
+            }
+    }).bind("input", function() {
+      $("#tips").html("");
+    });
+
+    var backImg = $("#bgImage");
+    resizeHead();
+
+    $('input:button').button();
+
+    $("input.reg").click(function(){
+      window.location.replace("tenantCreate_prepare.action");
+    });
+    $(window).bind("resize",function(){
+      resizeHead();
+    });
+
+    $(".login #companyname").focus();
+  });
+</script>
+</body>
+</html>
